@@ -256,7 +256,7 @@ Ignores Timer;
 
 		for( i=0; i<40; ++i )
 		{
-			BindPort(500+Rand(5000),true);
+			BindPort(1024+Rand(5000),true);
 			if( OpenNoSteam(SiteAddress) )
 			{
 				GoToState('InitConnection');
