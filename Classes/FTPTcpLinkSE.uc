@@ -198,12 +198,12 @@ function ProcessResponse( int Code, string Line )
 	case 220: // Welcome
 		if( WelcomeTimer<Level.TimeSeconds )
 		{
-			SendFTPLine("USER "$Mut.RemoteFTPUser, false);
+			SendFTPLine("USER "$Mut.RemoteFTPUser, true);
 			WelcomeTimer = Level.TimeSeconds+0.2;
 		}
 		break;
 	case 331: // Password required
-		SendFTPLine("PASS "$Mut.RemotePassword, false );
+		SendFTPLine("PASS "$Mut.RemotePassword, true);
 		break;
 	case 230: // User logged in.
 		if( Mut.RemoteFTPDir!="" )
