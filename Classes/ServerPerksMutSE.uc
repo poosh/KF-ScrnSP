@@ -199,7 +199,7 @@ function PostBeginPlay()
 
 static function FillPlayInfo(PlayInfo PlayInfo)
 {
-    Super.FillPlayInfo(PlayInfo);
+    super(Mutator).FillPlayInfo(PlayInfo);
 
     PlayInfo.AddSetting(default.ServerPerksGroup,"MinPerksLevel","Min Perk Level",1,0, "Text", "4;-1:70");
     PlayInfo.AddSetting(default.ServerPerksGroup,"MaxPerksLevel","Max Perk Level",1,0, "Text", "4;0:70");
@@ -364,7 +364,7 @@ state TestMap
 
 defaultproperties
 {
-    VersionNumber=96900
+    VersionNumber=96909
     FriendlyName="ScrN Server Veterancy Handler"
 
     DataPortRangeStart=19400
