@@ -1,5 +1,5 @@
 Class ServerPerksMutSE extends ServerPerksMut
-    Config(ServerPerks);
+    Config(ScrnServerPerks);
 
 // TODO: move to ServerPerksPrivate.ini
 var globalconfig int DataPortRangeStart, DataPortRangeEnd;
@@ -364,7 +364,7 @@ state TestMap
 
 defaultproperties
 {
-    VersionNumber=96909
+    VersionNumber=96915
     FriendlyName="ScrN Server Veterancy Handler"
 
     DataPortRangeStart=19400
