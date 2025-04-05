@@ -364,7 +364,7 @@ state TestMap
 
 defaultproperties
 {
-    VersionNumber=97100
+    VersionNumber=97200
     FriendlyName="ScrN Server Veterancy Handler"
 
     DataPortRangeStart=19400
