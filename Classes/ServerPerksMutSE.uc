@@ -142,20 +142,20 @@ function PostBeginPlay()
     }
 
     // Load custom chars.
-    for( i=0; i<CustomCharacters.Length; ++i )
-    {
+    for (i = 0; i < CustomCharacters.Length; ++i) {
         // Separate group from actual skin.
         S = CustomCharacters[i];
-        j = InStr(S,":");
-        if( j>=0 )
-            S = Mid(S,j+1);
-        PR = class<PlayerRecordClass>(DynamicLoadObject(S$"Mod."$S,class'Class',true));
-        if( PR!=None )
-        {
-            if( PR.Default.MeshName!="" ) // Add mesh package.
-                ImplementPackage(DynamicLoadObject(PR.Default.MeshName,class'Mesh',true));
-            if( PR.Default.BodySkinName!="" ) // Add skin package.
-                ImplementPackage(DynamicLoadObject(PR.Default.BodySkinName,class'Material',true));
+        j = InStr(S, ":");
+        if (j >= 0)
+            S = Mid(S, j + 1);
+        if (InStr(S, ".") == -1)
+            S $= "Mod." $ S;
+        PR = class<PlayerRecordClass>(DynamicLoadObject(S, class'Class', true));
+        if (PR!=None) {
+            if (PR.Default.MeshName != "")
+                ImplementPackage(DynamicLoadObject(PR.Default.MeshName, class'Mesh', true));
+            if (PR.Default.BodySkinName != "")
+                ImplementPackage(DynamicLoadObject(PR.Default.BodySkinName, class'Material', true));
             ImplementPackage(PR);
         }
     }
@@ -364,7 +364,7 @@ state TestMap
 
 defaultproperties
 {
-    VersionNumber=97200
+    VersionNumber=97220
     FriendlyName="ScrN Server Veterancy Handler"
 
     DataPortRangeStart=19400
