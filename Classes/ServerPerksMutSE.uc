@@ -65,6 +65,9 @@ function PostBeginPlay()
             LoadPerks[LoadPerks.Length] = V;
             ImplementPackage(V);
         }
+        else {
+            log("Failed to load perk '" $ Perks[i] $ "'", class.name);
+        }
     }
 
     // Setup categories
@@ -364,7 +367,7 @@ state TestMap
 
 defaultproperties
 {
-    VersionNumber=97300
+    VersionNumber=97400
     FriendlyName="ScrN Server Veterancy Handler"
 
     DataPortRangeStart=19400
